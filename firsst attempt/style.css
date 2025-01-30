@@ -1,0 +1,429 @@
+/* Apply a universal style to all elements */
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the body element */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #151F28;
+}
+
+/* Add a background video to the body */
+body {
+    background-image: url(2.mp4);
+}
+
+/* Book styling */
+
+/* Add background image to all pages */
+.paper {
+    background-image: url(letter\ page.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Style the book container */
+.book {
+    position: relative;
+    width: 750px;
+    height: 1000px;
+    transition: transform 0.5s;
+}
+
+/* Style individual pages */
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+/* Style the front and back of each page */
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+/* Style the front of the page */
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+/* Style the back of the page */
+.back {
+    z-index: 0;
+}
+
+/* Center content inside the front and back of the page */
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Rotate the back content */
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 5;
+}
+
+#p2 {
+    z-index: 4;
+}
+
+#p3 {
+    z-index: 3;
+}
+
+#p4 {
+    z-index: 2;
+}
+
+#p5 {
+    z-index: 1;
+}
+
+/* Animated logo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700;800,900&display=swap');
+
+/* Style the card container */
+.card {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+/* Expand the card on hover */
+.card:hover {
+    width: 600px;
+    transition-delay: 0.5s;
+}
+
+/* Style the circle inside the card */
+.card .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the circle's border and background */
+.card .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 8px solid var(--clr);
+    background: #191919;
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.75s, 1s;
+    filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
+
+/* Expand the circle on hover */
+.card:hover .circle::before {
+    width: 100%;
+    transition-delay: 0.5s;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--clr);
+}
+
+/* Style the logo inside the circle */
+.card .circle .logo {
+    position: relative;
+    width: 250px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+/* Hide the logo on hover */
+.card:hover .circle .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+/* Style the product image */
+.card .product_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Expand and rotate the product image on hover */
+.card:hover .product_img {
+    transition-delay: 0.75s;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+    top: 45%;
+    left: 75%;
+    height: 500px;
+}
+
+/* Style the content inside the card */
+.card .content {
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+/* Show the content on hover */
+.card:hover .content {
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+}
+
+/* Style the content's heading */
+.card .content h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    line-height: 1em;
+}
+
+/* Style the content's paragraph */
+.card .content p {
+    color: #fff;
+}
+
+/* Style the content's link */
+.card .content a {
+    position: relative;
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Page 2 image gallery */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,900;1,900&display=swap');
+
+/* Apply universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style the body element */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(images/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Style the container */
+.container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+/* Style the thumbnails */
+.container .thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Style each thumbnail item */
+.container .thumb li {
+    list-style: none;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    backdrop-filter: blur(4px);
+}
+
+/* Style the thumbnail images */
+.container .thumb li img {
+    width: 80%;
+    transition: 0.5s;
+}
+
+/* Rotate the thumbnail images on hover */
+.container .thumb li:hover img {
+    transform: rotate(-35deg);
+}
+
+/* Style the image box */
+.container .imgBox {
+    position: absolute;
+    top: 1000;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    backdrop-filter: blur(4px);
+    padding: 60px 20px;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Style the heading inside the image box */
+.container .imgBox h2 {
+    color: #ffffff3a;
+    letter-spacing: 1;
+}
+
+/* Style the images inside the image box */
+.container .imgBox img {
+    width: 80%;
+    transition: 0.25s;
+}
+
+/* Scale and rotate the images on hover */
+.container .imgBox img:hover {
+    transform: scale(1.5) rotate(-15deg) translateX(20px);
+}
+
+/* Style the sizes container */
+.container .imgBox .sizes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style each size item */
+.container .imgBox .sizes span {
+    color: #fff;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin-right: 5px;
+}
+
+/* Style each size item */
+.container .imgBox .sizes li {
+    list-style: none;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    color: #cb5fab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 4px;
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/* Move the size items up on hover */
+.container .imgBox .sizes li:hover {
+    transform: translateY(-10px);
+}
+
+/* Style the button inside the image box */
+.container .imgBox .btn {
+    position: absolute;
+    bottom: -50px;
+    background: #fff;
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #6439d1;
+    transition: 0.25s;
+}
+
+/* Add letter spacing to the button on hover */
+.container .imgBox .btn:hover {
+    letter-spacing: 2px;
+}
+
+/* cta-button */
+.cta-button {
+    display: inline-block;
+    padding: 10px 5px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30 px;
+    ;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
